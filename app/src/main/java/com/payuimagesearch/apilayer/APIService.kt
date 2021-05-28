@@ -13,5 +13,5 @@ interface APIService {
     }
 
     @GET(GET_IMAGES)
-    fun getImages(@Query("key") key: String, @Query("q") q: String, @Query("image_type") image_type: String) : Observable<Response<ImagesResponse>>
+    fun getImages(@Query("key") key: String, @Query("q") q: String, @Query("image_type") image_type: String, @Query("per_page") per_page: Int, @Query("page") page: Int ) : Observable<Response<ImagesResponse>>
 }

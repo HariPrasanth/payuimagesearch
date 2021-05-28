@@ -15,9 +15,9 @@ class ImagesViewModel @ViewModelInject constructor(private val networkLayer: API
     lateinit var getImagesDisposable: Disposable
     var getImagesLiveData: MutableLiveData<ImagesResponse> = MutableLiveData()
 
-    fun getImages(key: String, q: String, image_type: String, baseView: BaseView) {
+    fun getImages(key: String, q: String, image_type: String, page : Int, baseView: BaseView) {
         baseView.showProgress()
-        getImagesDisposable = networkLayer.getImages(key, q, image_type, baseView)
+        getImagesDisposable = networkLayer.getImages(key, q, image_type, page, baseView)
             .subscribe({ response: Response<ImagesResponse> ->
                 if (response.isSuccessful) {
                     getImagesLiveData.value = response.body()

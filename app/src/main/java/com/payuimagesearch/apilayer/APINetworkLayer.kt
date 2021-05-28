@@ -14,8 +14,8 @@ class APINetworkLayer @Inject constructor(var apiService: APIService, var errorP
         const val API_VERSION_1 = ""
     }
 
-    fun getImages(key: String, q: String, image_type: String, baseView: BaseView): Observable<Response<ImagesResponse>> {
-        return apiService.getImages(key, q, image_type)
+    fun getImages(key: String, q: String, image_type: String, page : Int, baseView: BaseView): Observable<Response<ImagesResponse>> {
+        return apiService.getImages(key, q, image_type, per_page = 5, page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError { t -> errorProcessor.showError(baseView, t) }
