@@ -2,4 +2,6 @@
     <string name="app_name">payuimagesearch</string>
     <string name="search_here">Type something...</string>
     <string name="search">Search</string>
+    <string name="query_empty">Search Query Cannot be Empty</string>
+    <string name="no_images">There is no image available for the search query</string>
 </resources>

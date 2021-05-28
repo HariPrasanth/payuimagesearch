@@ -9,9 +9,9 @@ import retrofit2.http.*
 interface APIService {
 
     companion object{
-        const val GET_IMAGES = ""
+        const val GET_IMAGES = "https://pixabay.com/api/"
     }
 
-    @GET(API_VERSION_1 + GET_IMAGES)
+    @GET(GET_IMAGES)
     fun getImages(@Query("key") key: String, @Query("q") q: String, @Query("image_type") image_type: String) : Observable<Response<ImagesResponse>>
 }
