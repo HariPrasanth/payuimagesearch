@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">payuimagesearch</string>
+    <string name="search_here">Type something...</string>
+    <string name="search">Search</string>
 </resources>
